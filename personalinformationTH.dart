@@ -153,6 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         border: InputBorder.none,
                         hintText:
                             'บ้านเลขที่/หมู่/ซอย/ถนน/แขวง,ตำบล/เขต,อำเภอ/จังหวัด/รหัสไปรษณีย์',
+                        hintStyle: TextStyle(fontSize: 10.0),
                       ),
                     ),
                     if (isValueCheckLocation(locationController.text))
