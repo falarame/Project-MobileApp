@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 )),
             SizedBox(height: 20.0),
             Text(
-              'ที่อยู่ (กรณีไม่มีส่วนที่ระบุ ให้ใส่ ( - ) )',
+              'ที่อยู่ (กรณีไม่มีส่วนที่ระบุ ให้ใส่ ( / ) แล้วใส่ในส่วนถัดไป)',
               style: TextStyle(fontSize: 10.0),
             ),
             Container(
