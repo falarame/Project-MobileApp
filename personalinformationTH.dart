@@ -200,7 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: '(รูปแบบ xxxxxxxxxx)',
+                        hintText: 'รูปแบบ: xxxxxxxxxx',
                       ),
                     ),
                     if (phoneController.text.isEmpty ||
@@ -244,7 +244,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'รูปแบบ xxx.xxx@student.mahidol.edu',
+                        hintText: 'รูปแบบ: xxx.xxx@student.mahidol.edu',
                       ),
                     ),
                     if (isValueCheckEmail(emailController.text))
