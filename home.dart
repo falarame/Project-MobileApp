@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'ProfileTH.dart';
 
-void main() {
-  runApp(HomePage());
+class CallHome {
+  void main() {
+    runApp(HomePage());
+  }
 }
 
 class HomePage extends StatelessWidget {
@@ -27,6 +30,7 @@ class HomePage extends StatelessWidget {
                 icon: Icon(Icons.home),
                 onPressed: () {
                   // กระทำเมื่อกดปุ่ม Home
+                  CallHome().main();
                 },
               ),
               IconButton(
@@ -45,6 +49,7 @@ class HomePage extends StatelessWidget {
                 icon: Icon(Icons.account_circle),
                 onPressed: () {
                   // กระทำเมื่อกดปุ่ม Account
+                  CallProfileTH().main();
                 },
               ),
             ],
@@ -113,7 +118,8 @@ class _HomeBodyState extends State<HomeBody> {
                 children: <Widget>[
                   Text(
                     _currentIndex == 0 ? 'หอพักชาย' : 'หอพักหญิง',
-                    style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 10.0),
                   Container(

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'ProfileTH.dart';
 
-void main() {
-  runApp(MyApp());
+class CallPersonalinformationTH {
+  void main() {
+    runApp(MyApp());
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -10,17 +13,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'แก้ไขข้อมูลส่วนบุคคล',
-      home: MyHomePage(),
+      home: personalinformationTH(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class personalinformationTH extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _personalinformationTHState createState() => _personalinformationTHState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _personalinformationTHState extends State<personalinformationTH> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController locationController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
@@ -80,6 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
             IconButton(
               onPressed: () {
                 // นำรหัสการทำงานเมื่อปุ่มถูกคลิกที่นี่
+                CallProfileTH().main();
               },
               icon: Icon(Icons.arrow_back), // รูปไอคอน "ออก"
             ),
@@ -284,6 +288,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       print(locationController.text);
                       print(phoneController.text);
                       print(emailController.text);
+                      CallProfileTH().main();
                     }
                   },
                   style: ButtonStyle(

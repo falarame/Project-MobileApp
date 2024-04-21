@@ -1,66 +1,68 @@
 import 'package:flutter/material.dart';
+import 'ProfileTH.dart';
+import 'home.dart';
 
 class BookingHistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Booking History'),
-      ),
-      body: Container(
-        margin: EdgeInsets.all(16.0),
-        padding: EdgeInsets.all(16.0),
-        decoration: BoxDecoration(
-          border: Border.all(color: Color.fromARGB(255, 151, 55, 215)), // สีเทา
-          borderRadius: BorderRadius.circular(10.0), // กำหนดขอบโค้ง
+        appBar: AppBar(
+          title: Text('Booking History'),
         ),
-        child: ListView(
-          children: [
-            BookingItem(
-              date: 'April 20, 2024',
-              time: '10:00 AM',
-            ),
-            BookingItem(
-              date: 'April 21, 2024',
-              time: '02:30 PM',
-            ),
-            // เพิ่ม BookingItem ตามจำนวนที่ต้องการ
-          ],
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-          color: Colors.grey[300], // สีเทา
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+        body: Container(
+          margin: EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
+            border:
+                Border.all(color: Color.fromARGB(255, 151, 55, 215)), // สีเทา
+            borderRadius: BorderRadius.circular(10.0), // กำหนดขอบโค้ง
+          ),
+          child: ListView(
             children: [
-              IconButton(
-                icon: Icon(Icons.home),
-                onPressed: () {
-                  // กระทำเมื่อกดปุ่ม Home
-                },
+              BookingItem(
+                date: 'April 20, 2024',
+                time: '10:00 AM',
               ),
-              IconButton(
-                icon: Icon(Icons.shopping_bag),
-                onPressed: () {
-                  // กระทำเมื่อกดปุ่ม Shopping Bag
-                },
+              BookingItem(
+                date: 'April 21, 2024',
+                time: '02:30 PM',
               ),
-              IconButton(
-                icon: Icon(Icons.account_balance_wallet),
-                onPressed: () {
-                  // กระทำเมื่อกดปุ่ม Wallet
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.account_circle),
-                onPressed: () {
-                  // กระทำเมื่อกดปุ่ม Account
-                },
-    )
-    ]
-  )
-  )
-  );
+              // เพิ่ม BookingItem ตามจำนวนที่ต้องการ
+            ],
+          ),
+        ),
+        bottomNavigationBar: BottomAppBar(
+            color: Colors.grey[300], // สีเทา
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.home),
+                    onPressed: () {
+                      // กระทำเมื่อกดปุ่ม Home
+                      CallHome().main();
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.shopping_bag),
+                    onPressed: () {
+                      // กระทำเมื่อกดปุ่ม Shopping Bag
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.account_balance_wallet),
+                    onPressed: () {
+                      // กระทำเมื่อกดปุ่ม Wallet
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.account_circle),
+                    onPressed: () {
+                      // กระทำเมื่อกดปุ่ม Account
+                      CallProfileTH().main();
+                    },
+                  )
+                ])));
   }
 }
 
@@ -105,8 +107,10 @@ class BookingItem extends StatelessWidget {
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: BookingHistoryPage(),
-  ));
+class CallHistory {
+  void main() {
+    runApp(MaterialApp(
+      home: BookingHistoryPage(),
+    ));
+  }
 }

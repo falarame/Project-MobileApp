@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:profile/IdentificationTH.dart';
+import 'package:profile/history.dart';
+import 'home.dart';
+import 'personalinformationTH.dart';
 
-void main() {
-  runApp(MyApp());
+class CallProfileTH {
+  void main() {
+    runApp(ProTH());
+  }
 }
 
-class MyApp extends StatelessWidget {
+class ProTH extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ProfilePage(),
+      home: ProfilePageTH(),
     );
   }
 }
 
-class ProfilePage extends StatelessWidget {
+class ProfilePageTH extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,11 +72,12 @@ class ProfilePage extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         // โค้ดสำหรับการเปลี่ยนหน้าหรือทำการอื่นๆ เมื่อคลิก
+                        CallPersonalinformationTH().main();
                       },
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 120),
                         child: Text(
-                          'ข้อมูลส่วนตัว ที่อยู่,อีเมล,เบอร์โทรศัพท์',
+                          'แก้ไขข้อมูลส่วนตัว ที่อยู่,อีเมล,เบอร์โทรศัพท์',
                           style: TextStyle(fontSize: 16, color: Colors.blue),
                         ),
                       ),
@@ -79,6 +86,7 @@ class ProfilePage extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         // โค้ดสำหรับการเปลี่ยนหน้าหรือทำการอื่นๆ เมื่อคลิก
+                        CallIdenTH().main();
                       },
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 120),
@@ -160,6 +168,7 @@ class ProfilePage extends StatelessWidget {
                 // โค้ดสำหรับการทำงานเมื่อคลิกที่ปุ่ม
                 print(
                     'Logged out'); // ตัวอย่างการแสดงข้อความ "Logged out" ในคอนโซล
+                CallHome().main();
               },
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -191,6 +200,7 @@ class ProfilePage extends StatelessWidget {
                         icon: Icon(Icons.home),
                         onPressed: () {
                           // โค้ดสำหรับการกระทำเมื่อคลิกที่ไอคอนบ้าน
+                          CallHome().main();
                         },
                         tooltip: '',
                       ),
@@ -217,6 +227,7 @@ class ProfilePage extends StatelessWidget {
                         icon: Icon(Icons.watch_later_outlined),
                         onPressed: () {
                           // โค้ดสำหรับการกระทำเมื่อคลิกที่ไอคอนกระเป๋าพร้อมนาฬิกาจับเวลา
+                          CallHistory().main();
                         },
                         tooltip: '',
                       ),
