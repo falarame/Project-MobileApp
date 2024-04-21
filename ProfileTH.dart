@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/home.dart';
 import 'package:project/history.dart';
+import 'package:project/register.dart';
 
 class CallProfileTH {
   void main() {
@@ -145,7 +146,7 @@ class ProfilePage extends StatelessWidget {
                     SizedBox(height: 10),
                     InkWell(
                       onTap: () {
-                        // โค้ดสำหรับการเปลี่ยนหน้าหรือทำการอื่นๆ เมื่อคลิก
+                        Navigator.pushReplacementNamed(context, '/logout');
                       },
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 120),
@@ -162,6 +163,7 @@ class ProfilePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // โค้ดสำหรับการทำงานเมื่อคลิกที่ปุ่ม
+                Callregis().main();
                 print(
                     'Logged out'); // ตัวอย่างการแสดงข้อความ "Logged out" ในคอนโซล
               },

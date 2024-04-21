@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:project/dormitory3_4.dart';
 import 'history.dart';
 import 'package:project/ProfileTH.dart';
 
@@ -19,6 +20,10 @@ final router = GoRouter(
     GoRoute(
       path: '/history',
       builder: (context, state) => HistoryPage(),
+    ),
+    GoRoute(
+      path: '/Dorm',
+      builder: (context, state) => MyHomePage(), // ตัวอย่างเท่านี้ คุณต้องสร้าง ProfilePage() ก่อน
     ),
   ],
 );
@@ -185,14 +190,19 @@ class _HomeBodyState extends State<HomeBody> {
   }
 
   Widget _buildImage(String imagePath) {
-    return AspectRatio(
-      aspectRatio: 16 / 9,
-      child: AnimatedPositioned(
-        duration: Duration(milliseconds: 300),
-        left: _currentIndex * MediaQuery.of(context).size.width * 0.85,
-        child: Image.asset(
-          imagePath,
-          fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: () {
+        CallDorm().main();
+      },
+      child: AspectRatio(
+        aspectRatio: 16 / 9,
+        child: AnimatedPositioned(
+          duration: Duration(milliseconds: 300),
+          left: _currentIndex * MediaQuery.of(context).size.width * 0.85,
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

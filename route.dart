@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project/IdentificationTH.dart';
+import 'package:project/dormitory3_4.dart';
 import 'package:project/home.dart';
 import 'package:project/history.dart';
 import 'package:project/ProfileTH.dart';
@@ -18,6 +18,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => HistoryPage());
       case '/Account':
         return MaterialPageRoute(builder: (_) => Account());
+      case '/Dorm':
+        return MaterialPageRoute(builder: (_) => MyHomePage());
       default:
         // If there is no such named route in the switch statement, e.g. /third
         return _errorRoute();
