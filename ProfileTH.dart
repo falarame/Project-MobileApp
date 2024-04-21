@@ -44,11 +44,46 @@ class ProfilePageTH extends StatelessWidget {
                     backgroundImage:
                         NetworkImage('https://example.com/profile-image.jpg'),
                   ),
-                  SizedBox(width: 10),
-                  Text(
-                    'profilename',
-                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  SizedBox(
+                    width: 10,
                   ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Spacer(),
+                      Text(
+                        'profilename',
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width - 200,
+                        child: Text(
+                          'Location: 999/-/-/ถนน พุทธมณฑลสาย 4/ตำบล ศาลายา/อำเภอพุทธมณฑล/นครปฐม/73170',
+                          style: TextStyle(fontSize: 8, color: Colors.white),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width - 200,
+                        child: Text(
+                          'Phone: xxxxxxxx',
+                          style: TextStyle(fontSize: 8, color: Colors.white),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width - 200,
+                        child: Text(
+                          'Email: xxx.xxx@student.mahidol.edu',
+                          style: TextStyle(fontSize: 8, color: Colors.white),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
