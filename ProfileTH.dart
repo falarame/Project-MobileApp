@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:profile/IdentificationTH.dart';
-import 'package:profile/history.dart';
-import 'home.dart';
-import 'personalinformationTH.dart';
+import 'package:project/home.dart';
+import 'package:project/history.dart';
 
 class CallProfileTH {
   void main() {
-    runApp(ProTH());
+    runApp(Account());
   }
 }
 
-class ProTH extends StatelessWidget {
+class Account extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ProfilePageTH(),
+      home: ProfilePage(),
     );
   }
 }
 
-class ProfilePageTH extends StatelessWidget {
+class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,46 +42,11 @@ class ProfilePageTH extends StatelessWidget {
                     backgroundImage:
                         NetworkImage('https://example.com/profile-image.jpg'),
                   ),
-                  SizedBox(
-                    width: 10,
+                  SizedBox(width: 10),
+                  Text(
+                    'profilename',
+                    style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Spacer(),
-                      Text(
-                        'profilename',
-                        style: TextStyle(fontSize: 18, color: Colors.white),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width - 200,
-                        child: Text(
-                          'Location: 999/-/-/ถนน พุทธมณฑลสาย 4/ตำบล ศาลายา/อำเภอพุทธมณฑล/นครปฐม/73170',
-                          style: TextStyle(fontSize: 8, color: Colors.white),
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width - 200,
-                        child: Text(
-                          'Phone: xxxxxxxx',
-                          style: TextStyle(fontSize: 8, color: Colors.white),
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width - 200,
-                        child: Text(
-                          'Email: xxx.xxx@student.mahidol.edu',
-                          style: TextStyle(fontSize: 8, color: Colors.white),
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                        ),
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),
@@ -107,12 +70,11 @@ class ProfilePageTH extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         // โค้ดสำหรับการเปลี่ยนหน้าหรือทำการอื่นๆ เมื่อคลิก
-                        CallPersonalinformationTH().main();
                       },
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 120),
                         child: Text(
-                          'แก้ไขข้อมูลส่วนตัว ที่อยู่,อีเมล,เบอร์โทรศัพท์',
+                          'ข้อมูลส่วนตัว ที่อยู่,อีเมล,เบอร์โทรศัพท์',
                           style: TextStyle(fontSize: 16, color: Colors.blue),
                         ),
                       ),
@@ -121,7 +83,6 @@ class ProfilePageTH extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         // โค้ดสำหรับการเปลี่ยนหน้าหรือทำการอื่นๆ เมื่อคลิก
-                        CallIdenTH().main();
                       },
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 120),
@@ -203,7 +164,6 @@ class ProfilePageTH extends StatelessWidget {
                 // โค้ดสำหรับการทำงานเมื่อคลิกที่ปุ่ม
                 print(
                     'Logged out'); // ตัวอย่างการแสดงข้อความ "Logged out" ในคอนโซล
-                CallHome().main();
               },
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -222,71 +182,32 @@ class ProfilePageTH extends StatelessWidget {
               ),
             ),
             SizedBox(height: 50),
-            Container(
-              color: Colors.grey,
-              height: 100,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.home),
-                        onPressed: () {
-                          // โค้ดสำหรับการกระทำเมื่อคลิกที่ไอคอนบ้าน
-                          CallHome().main();
-                        },
-                        tooltip: '',
-                      ),
-                      Text('หน้าแรก'),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.search),
-                        onPressed: () {
-                          // โค้ดสำหรับการกระทำเมื่อคลิกที่ไอคอนแว่นขยาย
-                        },
-                        tooltip: '',
-                      ),
-                      Text('ค้นหา'),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.watch_later_outlined),
-                        onPressed: () {
-                          // โค้ดสำหรับการกระทำเมื่อคลิกที่ไอคอนกระเป๋าพร้อมนาฬิกาจับเวลา
-                          CallHistory().main();
-                        },
-                        tooltip: '',
-                      ),
-                      Text('ประวัติการจอง'),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.account_circle),
-                        onPressed: () {
-                          // โค้ดสำหรับการกระทำเมื่อคลิกที่ไอคอนรูปบัญชี
-                        },
-                        tooltip: '',
-                      ),
-                      Text('โปรไฟล์'),
-                    ],
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+          BottomNavigationBarItem(icon: Icon(Icons.history), label: 'History'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_box), label: 'Account'),
+        ],
+        onTap: (int index) {
+          switch (index) {
+            case 0:
+              CallHome().main();
+              break;
+            case 2:
+              CallHistory().main();
+              break;
+            case 3:
+              CallProfileTH().main();
+              break;
+          }
+        },
       ),
     );
   }
